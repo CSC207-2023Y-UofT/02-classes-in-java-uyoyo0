@@ -79,8 +79,9 @@ public class Silly implements Comparable<Silly>{
      *       strings (e.g. this.name = [first string] + [second string]).
      *       Make sure you document this method!
      */
-
-
+    public Silly(String s1, String s2){
+        this.name = s1 + s2
+    }
 
 
 
@@ -134,6 +135,7 @@ public class Silly implements Comparable<Silly>{
     @Override
     public String toString(){
         // TODO (Task 3): Implement the body of this method!
+        return this.name;
     }
 
     /**
@@ -158,7 +160,11 @@ public class Silly implements Comparable<Silly>{
         }
 
         Silly other = (Silly) o; // To access .name of o, we need to cast it.
-
+        if (other.name.equals(this.name)){
+            return true;
+        }else{
+            return false;
+        }
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
     }
@@ -194,6 +200,7 @@ public class Silly implements Comparable<Silly>{
          *                You can get the length of a string by using the
          *                .length() method.
          */
+        return this.name.length() - other.name.length();
     }
 
     /*
